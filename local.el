@@ -2,9 +2,7 @@
 ;; such as passwords, which you do not want to share with your emacs installations
 ;; on other machines.
 
-(setq local-bundle-repository (concat user-emacs-directory "bundles/"))
 (add-to-list 'load-path user-emacs-directory)
-(add-to-list 'load-path local-bundle-repository)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 (defalias 'auto-tail-revert-mode 'tail-mode)
@@ -16,29 +14,21 @@
 (global-auto-revert-mode t)
 (show-paren-mode t)
 
-;; Ido
-(setq ido-enable-prefix nil
-      ido-enable-flex-matching t
-      ido-auto-merge-work-directories-length nil
-      ido-create-new-buffer 'always
-      ido-use-filename-at-point 'guess
-      ido-use-virtual-buffers t
-      ido-handle-duplicate-virtual-buffers 2
-      ido-max-prospects 5)
-
-(setq cabbage-completion-trigger 2
+(setq cabbage-completion-trigger "Alt-/"
       eclim-print-debug-messages nil
       eclim-accepted-file-regexps '("\\.java\\'" "\\.xml" "\\.properties"))
 
-(add-to-list 'cabbage-bundle-repositories local-bundle-repository)
+(add-to-list 'cabbage-bundle-repositories
+             (concat user-emacs-directory "bundles/")
+             t)
 
-(define-key emacs-lisp-mode-map (kbd "C-c C-f") 'find-function)
+(add-to-list 'cabbage-vendor-dirs (expand-file-name
+                                   (concat user-emacs-directory "vendor/")))
 
-(setq virtualenv-root "~/env")
+(require 'em-defun)
 
-(load "em-defun")
-(load "em-global-key-bindings")
-(load "em-bundle")
+(when (functionp 'ns-toggle-fullscreen)
+  (add-hook 'after-init-hook 'ns-toggle-fullscreen))
 
-;; Temp solution
-(load "em-java")
+(add-hook 'cabbage-initialized-hook
+          (lambda () (require 'em-key-bindings)))

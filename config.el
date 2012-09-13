@@ -4,7 +4,9 @@
 
       '(
         accessibility
+        autoinsert
         completion
+        cmake
         css
         cucumber
         diff
@@ -16,8 +18,11 @@
         lisp
         markdown
         python
+        project
+        rainbow
         ruby
         haml-and-sass
+        whitespace
         yaml
         snippets
 
@@ -37,4 +42,4 @@
 
 ;; Configure your favorite color theme.
 ;; Available themes: https://github.com/senny/theme-roller.el/tree/master/themes
-(setq cabbage-theme 'color-theme-lazy)
+(setq cabbage-theme 'color-theme-monokai)
