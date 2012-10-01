@@ -14,11 +14,11 @@
 (global-auto-revert-mode t)
 (show-paren-mode t)
 
-(setq cabbage-completion-trigger "Alt-/"
-      eclim-print-debug-messages nil
-      eclim-accepted-file-regexps '("\\.java\\'" "\\.xml" "\\.properties"))
+(setq cabbage-completion-trigger 2
+      eclim-print-debug-messages t
+      eclim-accepted-file-regexps '("\\.java" "\\.xml"))
 
-(add-to-list 'cabbage-bundle-repositories
+(add-to-list 'cabbage-bundle-dirs
              (concat user-emacs-directory "bundles/")
              t)
 
@@ -26,6 +26,7 @@
                                    (concat user-emacs-directory "vendor/")))
 
 (require 'em-defun)
+(require 'em-package)
 
 (when (functionp 'ns-toggle-fullscreen)
   (add-hook 'after-init-hook 'ns-toggle-fullscreen))

@@ -56,7 +56,7 @@
       (if (get-buffer new-name)
           (message "A buffer named '%s' already exists!" new-name)
         (progn
-          (rename-file name new-name 1)
+          (rename-file filename new-name 1)
           (rename-buffer new-name)
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
@@ -88,4 +88,3 @@
   nil)
 
 (provide 'em-defun)
-

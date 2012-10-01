@@ -23,6 +23,8 @@
 (global-set-key (kbd "M-w") 'kill-ring-save)
 (global-set-key (kbd "M-S t") 'textmate-goto-file)
 
+(global-set-key (kbd "<f5>") 'revert-buffer)
+
 (when (functionp 'ns-toggle-fullscreen)
   (global-set-key (kbd "C-x F") 'ns-toggle-fullscreen))
 

@@ -28,4 +28,5 @@
 ;; (setq ido-auto-merge-work-directories-length nil
 ;;       ido-max-prospects 6)
 (cabbage-vendor 'ido-ubiquitous)
+(add-to-list 'ido-ubiquitous-command-exceptions 'ucs-insert)
 (ido-ubiquitous t)
