@@ -15,8 +15,12 @@
 (show-paren-mode t)
 
 (setq cabbage-completion-trigger 2
-      eclim-print-debug-messages t
-      eclim-accepted-file-regexps '("\\.java" "\\.xml"))
+      eclim-print-debug-messages nil
+      eclim-accepted-file-regexps '("\\.java" "\\.xml")
+      eclim-auto-save nil)
+
+;; Auto-complete
+(setq ac-auto-start nil)
 
 (add-to-list 'cabbage-bundle-dirs
              (concat user-emacs-directory "bundles/")
@@ -27,6 +31,7 @@
 
 (require 'em-defun)
 (require 'em-package)
+(require 'em-automode)
 
 (when (functionp 'ns-toggle-fullscreen)
   (add-hook 'after-init-hook 'ns-toggle-fullscreen))

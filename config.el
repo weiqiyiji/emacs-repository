@@ -1,3 +1,4 @@
+
 (setq cabbage-bundles
       ;; The bundles listed here are enabled on emacs start.
       ;; Full list of bundles: https://github.com/senny/cabbage/wiki/Bundles
@@ -5,26 +6,26 @@
       '(
         accessibility
         autoinsert
-        completion
         cmake
+        completion
         css
         cucumber
         diff
         erlang
         git
+        haml-and-sass
         html
         java
         javascript
         lisp
         markdown
-        python
+        power-edit
         project
+        python
         rainbow
-        ruby
-        haml-and-sass
+        snippets
         whitespace
         yaml
-        snippets
 
         ;; cabbage-developer
         ;; rails
