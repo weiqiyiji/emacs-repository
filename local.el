@@ -19,15 +19,25 @@
       eclim-accepted-file-regexps '("\\.java" "\\.xml")
       eclim-auto-save nil)
 
+;; Highlight current line
+(global-hl-line-mode)
+(set-face-background 'hl-line "#330")
+
 ;; Auto-complete
-(setq ac-auto-start nil)
+(setq ac-auto-start 3
+      ac-delay 0.3)
 
 (add-to-list 'cabbage-bundle-dirs
              (concat user-emacs-directory "bundles/")
              t)
 
-(add-to-list 'cabbage-vendor-dirs (expand-file-name
-                                   (concat user-emacs-directory "vendor/")))
+(add-to-list 'cabbage-vendor-dirs
+             (expand-file-name
+              (concat user-emacs-directory "vendor/")))
+
+;; This does not work
+;; (add-hook 'conf-mode (lambda ()
+;;                       (setq tab-width 4)))
 
 (require 'em-defun)
 (require 'em-package)
@@ -37,4 +47,6 @@
   (add-hook 'after-init-hook 'ns-toggle-fullscreen))
 
 (add-hook 'cabbage-initialized-hook
-          (lambda () (require 'em-key-bindings)))
+          (lambda ()
+            (require 'em-key-bindings)
+            (ac-set-trigger-key "TAB")))

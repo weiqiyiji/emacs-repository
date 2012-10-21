@@ -24,6 +24,7 @@
         python
         rainbow
         snippets
+        uniquify
         whitespace
         yaml
 

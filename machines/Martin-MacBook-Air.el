@@ -3,3 +3,5 @@
 
 (setq cabbage-completion-framework 'auto-complete
       eclim-executable (expand-file-name "~/eclipse/eclim"))
+
+(setenv "WORKON_HOME" (expand-file-name "~/env"))

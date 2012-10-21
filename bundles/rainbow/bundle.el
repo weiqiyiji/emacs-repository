@@ -4,5 +4,9 @@
 
 ;; Author: Ji Luo <weiqiyiji@Martin-MacBook-Air>
 
-(cabbage-vendor 'rainbow-mode)
-(rainbow-mode)
+
+(defun load-rainbow-mode ()
+  (cabbage-vendor 'rainbow-mode)
+  (rainbow-mode))
+
+(add-hook 'css-mode-hook (load-rainbow-mode))
