@@ -33,9 +33,7 @@
                     ((file-exists-p "../.ropeproject")
                      (rope-open-project (concat default-directory "..")))
                     )
-              ))
-
-  )
+              )))
 
 ;; ropemacs Integration with auto-completion
 (defun ac-ropemacs-candidates ()
@@ -57,7 +55,7 @@
   (setq ac-sources (append '(ac-source-nropemacs
                              ac-source-nropemacs-dot) ac-sources)))
 
-(add-hook 'python-mode-hook 'ac-nropemacs-setup)
+;; (add-hook 'python-mode-hook 'ac-nropemacs-setup)
 
 (eval-after-load 'python
   '(progn

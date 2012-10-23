@@ -24,8 +24,9 @@
 (set-face-background 'hl-line "#330")
 
 ;; Auto-complete
-(setq ac-auto-start 3
-      ac-delay 0.3)
+(setq ac-auto-start nil
+      ac-delay 0.4
+      ac-ignore-case 'smart)
 
 (add-to-list 'cabbage-bundle-dirs
              (concat user-emacs-directory "bundles/")
