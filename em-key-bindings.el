@@ -1,3 +1,4 @@
+;; Ctrl-Z prefix command
 (define-prefix-command 'ctrl-z-map)
 (global-set-key (kbd "C-z") 'ctrl-z-map)
 (global-set-key (kbd "C-z C-m") 'set-mark-command)
@@ -17,12 +18,14 @@
 (global-set-key (kbd "C-x C-p") 'other-window-backward)
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 
-(global-set-key (kbd "M-w") 'kill-ring-save)
-(global-set-key (kbd "M-t") 'textmate-goto-file)
+;; Perspective
+(global-set-key (kbd "C-x p s") 'persp-switch)
+(global-set-key (kbd "C-x p q") 'persp-switch-quick)
 
-(global-set-key (kbd "<f5>") 'revert-buffer)
-(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
+;; Imenu
+(global-set-key (kbd "<f3>") 'imenu)
 
+;; Elisp
 (define-key emacs-lisp-mode-map (kbd "C-c C-f") 'find-function)
 
 (when (functionp 'ns-toggle-fullscreen)
@@ -30,5 +33,12 @@
 
 (when (cabbage-bundle-active-p 'power-edit)
   (global-set-key (kbd "C-c SPC") 'ace-jump-mode))
+
+;; Misc
+(global-set-key (kbd "M-w") 'kill-ring-save)
+(global-set-key (kbd "M-t") 'textmate-goto-file)
+
+(global-set-key (kbd "<f5>") 'revert-buffer)
+(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
 
 (provide 'em-key-bindings)

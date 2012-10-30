@@ -36,10 +36,6 @@
              (expand-file-name
               (concat user-emacs-directory "vendor/")))
 
-;; This does not work
-;; (add-hook 'conf-mode (lambda ()
-;;                       (setq tab-width 4)))
-
 (require 'em-defun)
 (require 'em-package)
 (require 'em-automode)
@@ -50,4 +46,7 @@
 (add-hook 'cabbage-initialized-hook
           (lambda ()
             (require 'em-key-bindings)
-            (ac-set-trigger-key "TAB")))
+            (ac-set-trigger-key "TAB")
+
+            (if (font-exists-p "Monaco")
+                (set-default-font "Monaco 13"))))
