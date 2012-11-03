@@ -14,6 +14,7 @@
         erlang
         git
         haml-and-sass
+        haskell
         html
         java
         javascript

@@ -1,3 +1,6 @@
 [submodule "vendor/ido-ubiquitous"]
 	path = vendor/ido-ubiquitous
 	url = git://github.com/technomancy/ido-ubiquitous.git
+[submodule "vendor/haskell"]
+	path = vendor/haskell
+	url = git://github.com/haskell/haskell-mode.git
