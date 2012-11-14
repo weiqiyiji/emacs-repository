@@ -20,8 +20,10 @@
         javascript
         lisp
         markdown
+        org
         power-edit
         project
+        protobuf
         python
         rainbow
         snippets

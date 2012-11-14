@@ -17,7 +17,8 @@
 (setq cabbage-completion-trigger 2
       eclim-print-debug-messages nil
       eclim-accepted-file-regexps '("\\.java" "\\.xml")
-      eclim-auto-save nil)
+      eclim-auto-save nil
+      ido-enable-flex-matching nil)
 
 ;; Highlight current line
 (global-hl-line-mode)
