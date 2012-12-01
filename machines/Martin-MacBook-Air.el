@@ -5,3 +5,14 @@
       eclim-executable (expand-file-name "~/eclipse/eclim"))
 
 (setenv "WORKON_HOME" (expand-file-name "~/env"))
+(setenv "PATH" (concat "/usr/local/git/bin" ":"
+                       "/usr/local/homebrew/bin" ":"
+                       "/usr/local/homebrew/sbin" ":"
+                       "$HOME/bin" ":"
+                       (getenv "PATH")))
+
+;; (setenv "MITSCHEME_LIBRARY_PATH"
+;;         "/Applications/mit-scheme.app/Contents/Resources")
+(setq scheme-program-name "/usr/local/bin/guile")
+
+(setq exec-path (split-string (getenv "PATH") path-separator))

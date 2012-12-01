@@ -9,12 +9,12 @@
         cmake
         completion
         css
+        common-lisp
         cucumber
         diff
-        erlang
         git
+        gtags
         haml-and-sass
-        haskell
         html
         java
         javascript
@@ -26,6 +26,7 @@
         protobuf
         python
         rainbow
+        scheme
         snippets
         uniquify
         whitespace
@@ -34,7 +35,6 @@
         ;; cabbage-developer
         ;; rails
         ;; latex
-        ;; org
         ;; plone
         ;; eclim
         ;; eclim-auto-complete

@@ -4,3 +4,6 @@
 [submodule "vendor/haskell"]
 	path = vendor/haskell
 	url = git://github.com/haskell/haskell-mode.git
+[submodule "vendor/slime"]
+	path = vendor/slime
+	url = git://github.com/nablaone/slime.git
