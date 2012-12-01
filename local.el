@@ -14,7 +14,7 @@
 (global-auto-revert-mode t)
 (show-paren-mode t)
 
-(setq cabbage-theme 'color-theme-github
+(setq cabbage-theme 'color-theme-ir-black
       cabbage-completion-trigger 2
       eclim-print-debug-messages nil
       eclim-accepted-file-regexps '("\\.java" "\\.xml")

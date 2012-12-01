@@ -13,6 +13,7 @@
 
 ;; (setenv "MITSCHEME_LIBRARY_PATH"
 ;;         "/Applications/mit-scheme.app/Contents/Resources")
-(setq scheme-program-name "/usr/local/bin/guile")
+;; (setq scheme-program-name
+;;       "/Applications/mit-scheme.app/Contents/Resources/mit-scheme")
 
 (setq exec-path (split-string (getenv "PATH") path-separator))
