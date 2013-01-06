@@ -17,10 +17,6 @@
 
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
-(cabbage-vendor 'gtags)
-
 (defun gtags-root-dir ()
   "Returns GTAGS root directory or nil if doesn't exist."
   (with-temp-buffer
@@ -41,7 +37,7 @@
                  (concat "cd " (gtags-root-dir)
                          " ; gtags --single-update " filename)))
 
-(defun gtags-update-current-file()
+(defun gtags-update-current-file ()
   (interactive)
   (defvar filename)
   (setq filename (replace-regexp-in-string (gtags-root-dir)
@@ -50,15 +46,17 @@
   (gtags-update-single filename)
   (message "Gtags updated for %s" filename))
 
-(defun gtags-update-hook()
+(defun gtags-update-hook ()
   "Update GTAGS file incrementally upon saving a file"
   (when gtags-mode
     (when (gtags-root-dir)
       (gtags-update-current-file))))
 
-(defun load-gtags-mode ()
+(defun setup-c-common-env ()
+  (interactive)
+  (setq gtags-suggested-key-mapping t)
+  (cabbage-vendor 'gtags)
   (gtags-mode 1))
 
 (add-hook 'after-save-hook 'gtags-update-hook)
-(add-hook 'c-mode-hook 'load-gtags-mode)
-(add-hook 'c++-mode-hook 'load-gtags-mode)
+(add-hook 'c-mode-common-hook 'setup-c-common-env)

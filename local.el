@@ -14,8 +14,7 @@
 (global-auto-revert-mode t)
 (show-paren-mode t)
 
-(setq cabbage-theme 'color-theme-ir-black
-      cabbage-completion-trigger 2
+(setq cabbage-completion-trigger 2
       eclim-print-debug-messages nil
       eclim-accepted-file-regexps '("\\.java" "\\.xml")
       eclim-auto-save nil
@@ -26,7 +25,7 @@
 (set-face-background 'hl-line "#330")
 
 ;; Auto-complete
-(setq ac-auto-start nil
+(setq ac-auto-start 2
       ac-delay 0.4
       ac-ignore-case 'smart)
 

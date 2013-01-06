@@ -16,7 +16,6 @@
         gtags
         haml-and-sass
         html
-        java
         javascript
         lisp
         markdown
@@ -40,6 +39,7 @@
         ;; eclim-auto-complete
         ;; eclim-company
         ;; maximize
+        ;;java
         ;; coffee-script
         ;; less-css
         ))
@@ -47,4 +47,4 @@
 
 ;; Configure your favorite color theme.
 ;; Available themes: https://github.com/senny/theme-roller.el/tree/master/themes
-(setq cabbage-theme 'color-theme-monokai)
+(setq cabbage-theme 'color-theme-ir-black)
