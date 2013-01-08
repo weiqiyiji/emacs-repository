@@ -24,4 +24,4 @@
   (setq js-indent-level 4
         javascript-indent-level 4))
 
-(add-hook 'js-mode-hook 'configure-js-mode-indent)
+(add-hook 'js-mode-hook 'configure-js-mode-indent t)

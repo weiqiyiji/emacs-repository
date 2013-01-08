@@ -7,3 +7,6 @@
 [submodule "vendor/slime"]
 	path = vendor/slime
 	url = git://github.com/nablaone/slime.git
+[submodule "vendor/auto-complete-clang"]
+	path = vendor/auto-complete-clang
+	url = git://github.com/brianjcj/auto-complete-clang.git

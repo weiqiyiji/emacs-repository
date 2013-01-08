@@ -6,6 +6,7 @@
       '(
         accessibility
         autoinsert
+        c
         cmake
         completion
         css
