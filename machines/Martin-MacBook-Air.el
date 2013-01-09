@@ -17,3 +17,14 @@
 ;;       "/Applications/mit-scheme.app/Contents/Resources/mit-scheme")
 
 (setq exec-path (split-string (getenv "PATH") path-separator))
+
+(setq user-include-dirs
+      (list
+       "/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include"
+       "/usr/include/c++/4.2.1"
+       "/usr/include/c++/4.2.1/backward"
+       "/usr/local/include"
+       "/Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include"
+       "/usr/include"
+       "/System/Library/Frameworks"
+       "/Library/Frameworks"))

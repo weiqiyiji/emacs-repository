@@ -56,7 +56,7 @@
   (interactive)
   (setq gtags-suggested-key-mapping t)
   (cabbage-vendor 'gtags)
-  (gtags-mode 1))
+  (gtags-mode 1)
+  (add-hook 'after-save-hook 'gtags-update-hook))
 
-(add-hook 'after-save-hook 'gtags-update-hook)
 (add-hook 'c-mode-common-hook 'setup-c-common-env)

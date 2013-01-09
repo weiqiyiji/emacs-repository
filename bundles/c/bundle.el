@@ -20,26 +20,34 @@
 
 ;;; Commentary:
 
-(setq ac-clang-flags
-      (list
-       "-I/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include"
-       "-I/usr/include/c++/4.2.1"
-       "-I/usr/include/c++/4.2.1/backward"
-       "-I/usr/local/include"
-       "-I/Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include"
-       "-I/usr/include"
-       "-I/System/Library/Frameworks"
-       "-I/Library/Frameworks"
-       "-I/Users/weiqiyiji/projects/unp/include"))
+(defvar user-include-dirs nil
+  "Include dirs, depend on operation system")
 
-(defun setup-clang ()
+(setq ac-clang-flags
+      (mapc (lambda (dir) (concat "-I" dir)) user-include-dirs))
+
+(defun c-bundle-add-to-include-dirs (include-dir)
+  (add-to-list 'user-include-dirs include-dir)
+  (add-to-list 'ac-clang-flags (concat "-I" include-dir)))
+
+;; (defun setup-semantic ()
+;;   (require 'cedet)
+;;   (setq semantic-default-submodes '(global-semantic-idle-scheduler-mode
+;;                                     global-semanticdb-minor-mode
+;;                                     global-semantic-idle-summary-mode
+;;                                     global-semantic-mru-bookmark-mode))
+;;   (semantic-mode 1))
+
+(defun c-bundle-setup-clang ()
   (cabbage-vendor 'auto-complete-clang)
   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
 
-(defun setup_c_mode ()
+(defun c-bundle-setup ()
   (setq compile-command "make")
   (define-key c-mode-base-map (kbd "<f7>") 'compile)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
-  (setup-clang))
+  (c-bundle-setup-clang))
 
-(add-hook 'c-mode-common-hook 'setup_c_mode)
+(add-hook 'c-mode-common-hook 'c-bundle-setup)
+
+(provide 'c-bundle-setup)
