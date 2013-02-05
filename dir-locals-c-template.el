@@ -1,6 +1,6 @@
-;;; zencoding.el ---
+;;; .dir-locals.el ---
 
-;; Copyright (C) 2012  Ji Luo
+;; Copyright (C) 2013  Ji Luo
 
 ;; Author: Ji Luo <weiqiyiji@Martin-MacBook-Air>
 ;; Keywords:
@@ -20,11 +20,7 @@
 
 ;;; Commentary:
 
-;;
-
-;;; Code:
-
-(require 'zencoding-mode)
-;; Auto-start on any markup modes
-(add-hook 'sgml-mode-hook 'zencoding-mode)
-(add-hook 'nxml-mode-hook 'zencoding-mode)
+((nil . ((eval . (eval-after-load 'c-bundle-setup
+                   '(c-bundle-add-to-include-dirs
+                     (file-truename (concat (locate-dominating-file buffer-file-name ".dir-locals.el")
+                                            "include"))))))))

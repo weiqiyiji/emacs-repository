@@ -41,8 +41,8 @@
 (require 'em-package)
 (require 'em-automode)
 
-(when (functionp 'ns-toggle-fullscreen)
-  (add-hook 'after-init-hook 'ns-toggle-fullscreen))
+;; (when (functionp 'ns-toggle-fullscreen)
+;;   (add-hook 'after-init-hook 'ns-toggle-fullscreen))
 
 (add-hook 'cabbage-initialized-hook
           (lambda ()

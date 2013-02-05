@@ -20,15 +20,16 @@
 
 ;;; Commentary:
 
-(defvar user-include-dirs nil
+(defvar user-include-dirs (list)
   "Include dirs, depend on operation system")
 
-(setq ac-clang-flags
-      (mapc (lambda (dir) (concat "-I" dir)) user-include-dirs))
+(setq ac-clang-flags (list))
 
-(defun c-bundle-add-to-include-dirs (include-dir)
-  (add-to-list 'user-include-dirs include-dir)
-  (add-to-list 'ac-clang-flags (concat "-I" include-dir)))
+(defun c-bundle-add-to-include-dirs (include-dirs)
+  (dolist (include-dir include-dirs)
+    (progn
+      (add-to-list 'user-include-dirs include-dir)
+      (add-to-list 'ac-clang-flags (concat "-I" include-dir)))))
 
 ;; (defun setup-semantic ()
 ;;   (require 'cedet)
@@ -38,15 +39,31 @@
 ;;                                     global-semantic-mru-bookmark-mode))
 ;;   (semantic-mode 1))
 
-(defun c-bundle-setup-clang ()
+(defun c-bundle--setup-clang ()
   (cabbage-vendor 'auto-complete-clang)
   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
+
+(defun c-bundle--setup-auto-pair ()
+  (make-local-variable 'skeleton-pair-alist)
+  (setq skeleton-pair t)
+  (setq skeleton-pair-alist
+        '((?\( _ ?\))
+          (?[  _ ?])
+          (?{  _ ?})
+          (?\" _ ?\")
+          (?' _ ?')))
+  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "'") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe))
 
 (defun c-bundle-setup ()
   (setq compile-command "make")
   (define-key c-mode-base-map (kbd "<f7>") 'compile)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
-  (c-bundle-setup-clang))
+  (c-bundle--setup-auto-pair)
+  (c-bundle--setup-clang))
 
 (add-hook 'c-mode-common-hook 'c-bundle-setup)
 

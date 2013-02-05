@@ -31,6 +31,7 @@
         uniquify
         whitespace
         yaml
+        zencoding
 
         ;; cabbage-developer
         ;; rails

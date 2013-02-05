@@ -24,16 +24,7 @@
   (setq ropemacs-guess-project t)
   (setq ropemacs-enable-autoimport t)
   (setq ropemacs-autoimport-modules '("os" "sys"))
-  (setq ropemacs-enable-shortcuts nil)
-
-  (add-hook 'python-mode-hook
-            (lambda ()
-              (cond ((file-exists-p ".ropeproject")
-                     (rope-open-project default-directory))
-                    ((file-exists-p "../.ropeproject")
-                     (rope-open-project (concat default-directory "..")))
-                    )
-              )))
+  (setq ropemacs-enable-shortcuts nil))
 
 ;; ropemacs Integration with auto-completion
 (defun ac-ropemacs-candidates ()

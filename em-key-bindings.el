@@ -25,6 +25,9 @@
 ;; Imenu
 (global-set-key (kbd "<f3>") 'imenu)
 
+;; Rename
+(global-set-key (kbd "<f2>") 'rename-file-and-buffer)
+
 ;; Elisp
 (define-key emacs-lisp-mode-map (kbd "C-c C-f") 'find-function)
 
