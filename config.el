@@ -16,6 +16,7 @@
         git
         gtags
         haml-and-sass
+        haskell
         html
         javascript
         lisp
@@ -24,7 +25,6 @@
         power-edit
         project
         protobuf
-        python
         rainbow
         scheme
         snippets
@@ -41,7 +41,7 @@
         ;; eclim-auto-complete
         ;; eclim-company
         ;; maximize
-        ;;java
+        ;; java
         ;; coffee-script
         ;; less-css
         ))

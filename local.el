@@ -49,5 +49,6 @@
             (require 'em-key-bindings)
             (ac-set-trigger-key "TAB")
 
-            (if (font-exists-p "Monaco")
-                (set-default-font "Monaco 13"))))
+            (cond
+             ((font-exists-p "Source_Code_Pro") (set-default-font "Source_Code_Pro 14"))
+             ((font-exists-p "Monaco") (set-default-font "Monaco 13")))))
