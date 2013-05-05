@@ -47,7 +47,7 @@
 (add-hook 'cabbage-initialized-hook
           (lambda ()
             (require 'em-key-bindings)
-            (ac-set-trigger-key "TAB")
+            ;; (ac-set-trigger-key "TAB")
 
             (cond
              ((font-exists-p "Source_Code_Pro") (set-default-font "Source_Code_Pro 14"))
