@@ -28,8 +28,8 @@
 (defun c-bundle-add-to-include-dirs (include-dirs)
   (dolist (include-dir include-dirs)
     (progn
-      (add-to-list 'user-include-dirs include-dir)
-      (add-to-list 'ac-clang-flags (concat "-I" include-dir)))))
+      (add-to-list 'user-include-dirs include-dir t)
+      (add-to-list 'ac-clang-flags (concat "-I" include-dir) t))))
 
 ;; (defun setup-semantic ()
 ;;   (require 'cedet)
