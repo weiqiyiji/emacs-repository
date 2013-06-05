@@ -49,4 +49,4 @@
 
 ;; Configure your favorite color theme.
 ;; Available themes: https://github.com/senny/theme-roller.el/tree/master/themes
-(setq cabbage-theme 'color-theme-ir-black)
+;; (setq cabbage-theme 'color-theme-ir-black)

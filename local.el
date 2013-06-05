@@ -2,6 +2,8 @@
 ;; such as passwords, which you do not want to share with your emacs installations
 ;; on other machines.
 
+;; Disable theme-roller in cabbage.el first when clone cabbage
+
 (add-to-list 'load-path user-emacs-directory)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -49,7 +51,6 @@
           (lambda ()
             (require 'em-key-bindings)
             (ac-set-trigger-key "TAB")
-
             (cond
              ((font-exists-p "Source_Code_Pro") (set-default-font "Source_Code_Pro 14"))
              ((font-exists-p "Monaco") (set-default-font "Monaco 13")))))
