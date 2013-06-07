@@ -51,6 +51,7 @@
           (lambda ()
             (require 'em-key-bindings)
             (ac-set-trigger-key "TAB")
+            (load-theme 'solarized-dark t)
             (cond
              ((font-exists-p "Source_Code_Pro") (set-default-font "Source_Code_Pro 14"))
              ((font-exists-p "Monaco") (set-default-font "Monaco 13")))))
