@@ -18,10 +18,8 @@
 
 (setq cabbage-completion-trigger 2
       cabbage-completion-framework 'auto-complete
-      eclim-print-debug-messages nil
-      eclim-accepted-file-regexps '("\\.java" "\\.xml")
-      eclim-auto-save nil
-      ido-enable-flex-matching nil)
+      ido-enable-flex-matching nil
+      debug-on-error t)
 
 ;; Highlight current line
 (global-hl-line-mode)

@@ -21,3 +21,4 @@ abbrev_defs
 session.*
 url/
 tramp
+elpa/jedi-0.1.2/env

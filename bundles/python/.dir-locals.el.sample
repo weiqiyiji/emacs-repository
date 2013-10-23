@@ -1,0 +1,1 @@
+((python-mode . ((eval . (activate-virtualenv "env_name")))))

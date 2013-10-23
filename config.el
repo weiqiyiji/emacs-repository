@@ -25,6 +25,7 @@
         power-edit
         project
         protobuf
+        python
         rainbow
         scheme
         snippets
