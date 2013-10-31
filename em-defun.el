@@ -87,9 +87,4 @@
                            t t nil 1))))))
   nil)
 
-(defun activate-virtualenv (env_name)
-  (let ((virtualenv-root
-         (or (getenv "WORKON_HOME") (expand-file-name "~/.virtualenvs"))))
-    (setenv "VIRTUAL_ENV" (concat virtualenv-root "/" env_name))))
-
 (provide 'em-defun)

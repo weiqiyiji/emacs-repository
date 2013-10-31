@@ -30,6 +30,8 @@
       ac-delay 0.4
       ac-ignore-case 'smart)
 
+(defvar activated-virtualenv nil)
+
 (add-to-list 'cabbage-bundle-dirs
              (concat user-emacs-directory "bundles/")
              t)
