@@ -18,4 +18,6 @@
 (defun activate-virtualenv (env-name)
   (setup-jedi-server env-name))
 
-(add-hook 'python-mode-hook 'setup-jedi-server)
+(add-hook 'python-mode-hook
+          (lambda ()
+            (add-hook 'hack-local-variables-hook 'setup-jedi-server)))
