@@ -6,5 +6,7 @@ if [ $# -ne 2 ]; then
 fi
 
 target=$1/.dir-locals.el
-cp ~/.emacs.d/bundles/python/.dir-locals.el.sample $target
-sed -i '' "s/env_name/$2/" $target
+cat <<EOF > $target
+((python-mode . ((activated-virtualenv . "$2")
+                 (buildout-root-dir . "$1"))))
+EOF

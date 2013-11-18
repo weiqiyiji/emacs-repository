@@ -9,6 +9,7 @@
         c
         cmake
         completion
+        conf
         css
         common-lisp
         cucumber
