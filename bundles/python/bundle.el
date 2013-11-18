@@ -1,19 +1,6 @@
 (setq jedi:complete-on-dot t
       jedi:setup-keys t)    ; For jedi <= 0.1.2
 
-(defun detect-eggs-dirs (buffer-name)
-  (let ((buffer-dir (file-name-directory buffer-name)))
-    (while (and (not (file-exists-p
-                      (concat buffer-dir "eggs")))
-                buffer-dir)
-      (setq buffer-dir
-            (if (equal buffer-dir "/")
-                nil
-              (file-name-directory (directory-file-name buffer-dir)))))
-    (if buffer-dir
-        (directory-files (concat buffer-dir "eggs") t ".\.egg")
-      nil)))
-
 (defun get-virtualenv-path (env-name)
   (let ((virtualenv-root
          (or (getenv "WORKON_HOME") (expand-file-name "~/.virtualenvs"))))
