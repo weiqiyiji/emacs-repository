@@ -10,6 +10,10 @@
   (set (make-local-variable 'jedi:server-args) (list))
   (when (boundp 'buildout-root-dir)
     (let ((eggs (concat buildout-root-dir "/eggs/")))
+      (set 'jedi:server-args
+           (append jedi:server-args
+                   (list "--sys-path" buildout-root-dir
+                         "--sys-path" (concat buildout-root-dir "/src/"))))
       (dolist (egg (directory-files eggs t "\.egg"))
         (set 'jedi:server-args
              (append jedi:server-args (list "--sys-path" egg))))))

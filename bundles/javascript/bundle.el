@@ -19,9 +19,9 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-(defun configure-js-mode-indent ()
-  (interactive)
-  (setq js-indent-level 4
-        javascript-indent-level 4))
+;; (defun configure-js-mode-indent ()
+;;   (interactive)
+;;   (setq js-indent-level 4
+;;         javascript-indent-level 4))
 
-(add-hook 'js-mode-hook 'configure-js-mode-indent t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
