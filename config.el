@@ -16,13 +16,10 @@
         diff
         git
         gtags
-        haml-and-sass
-        haskell
         html
         javascript
         lisp
         markdown
-        org
         power-edit
         project
         protobuf
@@ -36,9 +33,12 @@
         zencoding
 
         ;; cabbage-developer
+        ;; haskell
         ;; rails
         ;; latex
         ;; plone
+        ;; org
+        ;; haml-and-sass
         ;; eclim
         ;; eclim-auto-complete
         ;; eclim-company
