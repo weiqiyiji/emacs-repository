@@ -8,13 +8,14 @@
         autoinsert
         c
         cmake
+        common-lisp
         completion
         conf
         css
-        common-lisp
         cucumber
         diff
         git
+        google-c-style
         gtags
         html
         javascript

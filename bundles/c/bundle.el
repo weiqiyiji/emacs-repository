@@ -63,7 +63,8 @@
   (define-key c-mode-base-map (kbd "<f7>") 'compile)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
   (c-bundle--setup-auto-pair)
-  (c-bundle--setup-clang))
+  (c-bundle--setup-clang)
+  )
 
 (add-hook 'c-mode-common-hook 'c-bundle-setup)
 
