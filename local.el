@@ -40,6 +40,20 @@
              (expand-file-name
               (concat user-emacs-directory "vendor/")))
 
+;; auto pair
+(setq skeleton-pair t)
+(setq skeleton-pair-alist
+      '((?\( _ ?\))
+        (?[  _ ?])
+        (?{  _ ?})
+        (?\" _ ?\")
+        (?' _ ?')))
+(local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+(local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+(local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+(local-set-key (kbd "'") 'skeleton-pair-insert-maybe)
+(local-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+
 (require 'em-defun)
 (require 'em-package)
 (require 'em-automode)

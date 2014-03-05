@@ -4,9 +4,13 @@
 
 ;; Author: Ji Luo <jiluo@MartinMacBook-Pro>
 
-(setenv "PATH" (concat "/usr/local/git/bin" ":"
-                       "$HOME/bin" ":"
-                       (getenv "PATH")))
+
+(setenv "GOPATH" "~/projects/go")
+(setenv "PATH"
+        (concat "/usr/local/git/bin" ":"
+                (concat (getenv "GOPATH") "/bin") ":"
+                (concat (getenv "HOME") "/bin") ":"
+                (getenv "PATH")))
 
 (setq exec-path (split-string (getenv "PATH") path-separator))
 

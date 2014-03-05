@@ -87,4 +87,19 @@
                            t t nil 1))))))
   nil)
 
+(defun setup-skeleton-pairs ()
+  (make-local-variable 'skeleton-pair-alist)
+  (setq skeleton-pair t)
+  (setq skeleton-pair-alist
+        '((?\( _ ?\))
+          (?[  _ ?])
+          (?{  _ ?})
+          (?\" _ ?\")
+          (?' _ ?')))
+  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "'") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe))
+
 (provide 'em-defun)

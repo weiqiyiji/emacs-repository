@@ -43,28 +43,12 @@
   (cabbage-vendor 'auto-complete-clang)
   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
 
-(defun c-bundle--setup-auto-pair ()
-  (make-local-variable 'skeleton-pair-alist)
-  (setq skeleton-pair t)
-  (setq skeleton-pair-alist
-        '((?\( _ ?\))
-          (?[  _ ?])
-          (?{  _ ?})
-          (?\" _ ?\")
-          (?' _ ?')))
-  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "'") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe))
-
 (defun c-bundle-setup ()
   (setq compile-command "make")
   (define-key c-mode-base-map (kbd "<f7>") 'compile)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
-  (c-bundle--setup-auto-pair)
-  (c-bundle--setup-clang)
-  )
+  (setup-skeleton-pairs)
+  (c-bundle--setup-clang))
 
 (add-hook 'c-mode-common-hook 'c-bundle-setup)
 
