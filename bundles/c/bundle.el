@@ -20,6 +20,8 @@
 
 ;;; Commentary:
 
+(cabbage-vendor 'google-c-style)
+
 (defvar user-include-dirs (list)
   "Include dirs, depend on operation system")
 
@@ -31,19 +33,12 @@
       (add-to-list 'user-include-dirs include-dir t)
       (add-to-list 'ac-clang-flags (concat "-I" include-dir) t))))
 
-;; (defun setup-semantic ()
-;;   (require 'cedet)
-;;   (setq semantic-default-submodes '(global-semantic-idle-scheduler-mode
-;;                                     global-semanticdb-minor-mode
-;;                                     global-semantic-idle-summary-mode
-;;                                     global-semantic-mru-bookmark-mode))
-;;   (semantic-mode 1))
-
 (defun c-bundle--setup-clang ()
   (cabbage-vendor 'auto-complete-clang)
   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
 
 (defun c-bundle-setup ()
+  (google-set-c-style)
   (setq compile-command "make")
   (define-key c-mode-base-map (kbd "<f7>") 'compile)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)

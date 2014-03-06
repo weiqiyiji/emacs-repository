@@ -88,18 +88,16 @@
   nil)
 
 (defun setup-skeleton-pairs ()
-  (make-local-variable 'skeleton-pair-alist)
-  (setq skeleton-pair t)
-  (setq skeleton-pair-alist
-        '((?\( _ ?\))
-          (?[  _ ?])
-          (?{  _ ?})
-          (?\" _ ?\")
-          (?' _ ?')))
-  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "'") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe))
+  (cabbage--set-pairs '("(" "{" "[" "\"" "\'" "`")))
+
+
+(defun google-c-style-header-guard (path filename)
+  (let ((root-dir (cabbage--find-parent-with-file path filename)))
+    (upcase (concat
+             (replace-regexp-in-string
+              "\/"
+              "_"
+              (substring (file-name-directory path) (length root-dir)))
+             (file-name-base (buffer-file-name)) "_H_"))))
 
 (provide 'em-defun)

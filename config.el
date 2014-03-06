@@ -16,7 +16,6 @@
         diff
         git
         go
-        google-c-style
         gtags
         html
         javascript
