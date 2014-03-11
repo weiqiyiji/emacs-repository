@@ -20,10 +20,18 @@
 
 ;;; Commentary:
 
-(cabbage-vendor 'google-c-style)
-
 (defvar user-include-dirs (list)
   "Include dirs, depend on operation system")
+
+(cabbage-vendor 'google-c-style)
+
+;; cmake
+(cabbage-vendor 'cmake-mode)
+(setq auto-mode-alist
+      (append '(("CMakeLists\\.txt\\'" . cmake-mode)
+                ("\\.cmake\\'" . cmake-mode))
+              auto-mode-alist))
+;; -- cmake
 
 (setq ac-clang-flags (list))
 
@@ -39,8 +47,6 @@
 
 (defun c-bundle-setup ()
   (google-set-c-style)
-  (setq compile-command "make")
-  (define-key c-mode-base-map (kbd "<f7>") 'compile)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
   (setup-skeleton-pairs)
   (c-bundle--setup-clang))

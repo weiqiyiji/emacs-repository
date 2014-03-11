@@ -7,14 +7,12 @@
         accessibility
         autoinsert
         c
-        cmake
         common-lisp
         completion
         conf
         css
         cucumber
         diff
-        git
         go
         gtags
         html
