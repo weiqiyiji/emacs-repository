@@ -29,7 +29,7 @@
 (global-set-key (kbd "<f2>") 'rename-file-and-buffer)
 
 ;; Elisp
-(define-key emacs-lisp-mode-map (kbd "C-c C-f") 'find-function)
+(define-key emacs-lisp-mode-map (kbd "C-]") 'find-function)
 
 (when (functionp 'ns-toggle-fullscreen)
   (global-set-key (kbd "C-x F") 'ns-toggle-fullscreen))
@@ -40,8 +40,11 @@
 ;; Misc
 (global-set-key (kbd "M-w") 'kill-ring-save)
 (global-set-key (kbd "M-t") 'textmate-goto-file)
+(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 
 (global-set-key (kbd "<f5>") 'revert-buffer)
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
+
+(global-set-key (kbd "<f4>") 'occur)
 
 (provide 'em-key-bindings)

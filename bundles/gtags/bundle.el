@@ -57,6 +57,8 @@
   (setq gtags-suggested-key-mapping t)
   (cabbage-vendor 'gtags)
   (gtags-mode 1)
+  (define-key gtags-mode-map "\C-]" 'gtags-find-tag-from-here)
+  (define-key gtags-mode-map "\C-[" 'gtags-pop-stack)
   (add-hook 'after-save-hook 'gtags-update-hook))
 
 (add-hook 'c-mode-common-hook 'setup-c-common-env)

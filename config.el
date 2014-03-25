@@ -11,8 +11,6 @@
         completion
         conf
         css
-        cucumber
-        diff
         go
         gtags
         html

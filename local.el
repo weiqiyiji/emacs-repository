@@ -6,7 +6,6 @@
 
 (add-to-list 'load-path user-emacs-directory)
 
-(defalias 'yes-or-no-p 'y-or-n-p)
 (defalias 'auto-tail-revert-mode 'tail-mode)
 (defalias 'qrr 'query-replace-regexp)
 
@@ -40,32 +39,16 @@
              (expand-file-name
               (concat user-emacs-directory "vendor/")))
 
-;; auto pair
-(setq skeleton-pair t)
-(setq skeleton-pair-alist
-      '((?\( _ ?\))
-        (?[  _ ?])
-        (?{  _ ?})
-        (?\" _ ?\")
-        (?' _ ?')))
-(local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
-(local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
-(local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-(local-set-key (kbd "'") 'skeleton-pair-insert-maybe)
-(local-set-key (kbd "[") 'skeleton-pair-insert-maybe)
-
 (require 'em-defun)
 (require 'em-package)
 (require 'em-automode)
 
-;; (when (functionp 'ns-toggle-fullscreen)
-;;   (add-hook 'after-init-hook 'ns-toggle-fullscreen))
+(defun cabbage-initialized-hook-callback ()
+  (require 'em-key-bindings)
+  (ac-set-trigger-key "<C-tab>")
+  (load-theme 'solarized-dark t)
+  (cond
+   ((font-exists-p "Source_Code_Pro") (set-default-font "Source_Code_Pro 14"))
+   ((font-exists-p "Monaco") (set-default-font "Monaco 13"))))
 
-(add-hook 'cabbage-initialized-hook
-          (lambda ()
-            (require 'em-key-bindings)
-            (ac-set-trigger-key "<C-tab>")
-            (load-theme 'solarized-dark t)
-            (cond
-             ((font-exists-p "Source_Code_Pro") (set-default-font "Source_Code_Pro 14"))
-             ((font-exists-p "Monaco") (set-default-font "Monaco 13")))))
+(add-hook 'cabbage-initialized-hook 'cabbage-initialized-hook-callback)
