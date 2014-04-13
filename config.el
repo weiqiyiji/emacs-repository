@@ -7,7 +7,6 @@
         accessibility
         autoinsert
         c
-        common-lisp
         completion
         conf
         css
