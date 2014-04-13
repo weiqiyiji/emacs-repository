@@ -10,3 +10,6 @@
 [submodule "vendor/auto-complete-clang"]
 	path = vendor/auto-complete-clang
 	url = git://github.com/brianjcj/auto-complete-clang.git
+[submodule "cabbage"]
+	path = cabbage
+	url = git@github.com:weiqiyiji/cabbage.git
