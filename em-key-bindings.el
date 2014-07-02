@@ -23,7 +23,7 @@
 (global-set-key (kbd "C-x p q") 'persp-switch-quick)
 
 ;; Imenu
-(global-set-key (kbd "<f3>") 'imenu)
+(global-set-key (kbd "M-<f12>") 'imenu)
 
 ;; Rename
 (global-set-key (kbd "<f2>") 'rename-file-and-buffer)

@@ -24,8 +24,9 @@
            (append jedi:server-args
                    (list "--virtual-env" (get-virtualenv-path env))))))
   (jedi:setup)
-  (define-key python-mode-map "\C-[" 'jedi:goto-definition)
-  (define-key python-mode-map "\C-]" 'jedi:goto-definition-pop-marker))
+  ;; (define-key python-mode-map "\C-[" 'jedi:goto-definition)
+  ;; (define-key python-mode-map "\C-]" 'jedi:goto-definition-pop-marker)
+  )
 
 (defun activate-virtualenv (env-name)
   (setup-jedi-server env-name))

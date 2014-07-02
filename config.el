@@ -10,12 +10,12 @@
         completion
         conf
         css
-        go
         gtags
         html
         javascript
         lisp
         markdown
+        modeline
         power-edit
         project
         protobuf
