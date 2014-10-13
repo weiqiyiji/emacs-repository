@@ -23,8 +23,6 @@
 (defvar user-include-dirs (list)
   "Include dirs, depend on operation system")
 
-(cabbage-vendor 'google-c-style)
-
 ;; cmake
 (cabbage-vendor 'cmake-mode)
 (setq auto-mode-alist
@@ -46,6 +44,7 @@
   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
 
 (defun c-bundle-setup ()
+  (cabbage-vendor 'google-c-style)
   (google-set-c-style)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
   (setup-skeleton-pairs)

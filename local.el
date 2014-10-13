@@ -18,7 +18,11 @@
 (setq cabbage-completion-trigger 2
       cabbage-completion-framework 'auto-complete
       ido-enable-flex-matching nil
-      debug-on-error t)
+      debug-on-error t
+
+      ;; open buffer using vertical splitting, see http://stackoverflow.com/questions/2081577/setting-emacs-split-to-horizontal
+      split-height-threshold nil
+      split-width-threshold 0)
 
 ;; Highlight current line
 (global-hl-line-mode)
@@ -49,6 +53,9 @@
   (require 'em-key-bindings)
   (ac-set-trigger-key "<C-tab>")
   (cond
+   ((font-exists-p "Anonymous Pro") (progn
+                                      (set-default-font "Anonymous Pro 14")
+                                      (setq-default line-spacing 0.4)))
    ((font-exists-p "Source_Code_Pro") (set-default-font "Source_Code_Pro 14"))
    ((font-exists-p "Monaco") (set-default-font "Monaco 13"))))
 

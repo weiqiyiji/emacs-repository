@@ -4,7 +4,6 @@
 
 ;; Author: Ji Luo <jiluo@MartinMacBook-Pro>
 
-
 (setenv "GOPATH" "~/projects/go")
 (setenv "PATH"
         (concat "/usr/local/git/bin" ":"
