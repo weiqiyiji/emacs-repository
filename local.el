@@ -4,7 +4,7 @@
 
 ;; Disable theme-roller in cabbage.el first when clone cabbage
 
-(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path (concat user-emacs-directory "em-framework"))
 
 (defalias 'auto-tail-revert-mode 'tail-mode)
 (defalias 'qrr 'query-replace-regexp)
@@ -18,11 +18,11 @@
 (setq cabbage-completion-trigger 2
       cabbage-completion-framework 'auto-complete
       ido-enable-flex-matching nil
-      debug-on-error t
+      debug-on-error t)
 
-      ;; open buffer using vertical splitting, see http://stackoverflow.com/questions/2081577/setting-emacs-split-to-horizontal
-      split-height-threshold nil
-      split-width-threshold 0)
+;; open buffer using vertical splitting, see http://stackoverflow.com/questions/2081577/setting-emacs-split-to-horizontal
+;; (setq split-height-threshold nil
+;;       split-width-threshold 0)
 
 ;; Highlight current line
 (global-hl-line-mode)
