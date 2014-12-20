@@ -47,6 +47,7 @@
   (cabbage-vendor 'google-c-style)
   (google-set-c-style)
   (define-key c-mode-base-map [(return)] 'newline-and-indent)
+  (global-set-key (kbd "C-S-x") 'execute-extended-command)
   (setup-skeleton-pairs)
   (c-bundle--setup-clang))
 
