@@ -24,4 +24,12 @@
 ;;   (setq js-indent-level 4
 ;;         javascript-indent-level 4))
 
+(defun configure-js-mode-indent ()
+  (interactive)
+  (setq js2-basic-offset 2
+        js-indent-level 2
+        javascript-indent-level 2))
+
+(add-hook 'js2-mode-hook 'configure-js-mode-indent)
+
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))

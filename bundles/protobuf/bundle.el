@@ -22,6 +22,12 @@
 
 ;;; Code:
 
-
 (cabbage-vendor 'protobuf-mode)
 (add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
+
+(defconst em-protobuf-style
+  '((c-basic-offset . 4)
+    (indent-tabs-mode . nil)))
+
+(add-hook 'protobuf-mode-hook
+          (lambda () (c-add-style "em-protobuf-style" em-protobuf-style t)))
